@@ -750,9 +750,12 @@ function finish(){
   showResults();
 }
 
+var SITE_URL="https://michaelzaks.github.io/GlobusX/";   // public play URL (update if a custom domain is added)
 function bandEmoji(ds){ if(ds>=90)return"🟩"; if(ds>=70)return"🟨"; if(ds>=40)return"🟧"; if(ds>0)return"🟥"; return"⬛"; }
 function buildShare(results,total){
-  return "GlobusX · "+state.cfg.name+" "+dateKey()+"\n"+total+"/"+state.cfg.max+"\n"+results.map(function(r){return bandEmoji(r.ds);}).join("")+"\n#GlobusX";
+  // append a date-based cache-buster so social apps re-scrape the link preview instead of showing a stale/no-preview cache
+  var link=SITE_URL+"?v="+dateKey();
+  return "GlobusX · "+state.cfg.name+" "+dateKey()+"\n"+total+"/"+state.cfg.max+"\n"+results.map(function(r){return bandEmoji(r.ds);}).join("")+"\n"+link;
 }
 
 /* ===================== leaderboard (simulated daily field) ===================== */
