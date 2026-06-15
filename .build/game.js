@@ -750,7 +750,7 @@ function finish(){
   showResults();
 }
 
-var SITE_URL="https://michaelzaks.github.io/GlobusX/";   // public play URL (update if a custom domain is added)
+var SITE_URL="https://globusx.pages.dev/";   // public play URL (username-free Cloudflare Pages domain)
 function bandEmoji(ds){ if(ds>=90)return"🟩"; if(ds>=70)return"🟨"; if(ds>=40)return"🟧"; if(ds>0)return"🟥"; return"⬛"; }
 function buildShare(results,total){
   // append a date-based cache-buster so social apps re-scrape the link preview instead of showing a stale/no-preview cache

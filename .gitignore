@@ -8,3 +8,7 @@
 *.swp
 *~
 Thumbs.db
+
+# tooling caches / deploy dir (never commit)
+.wrangler/
+dist/
